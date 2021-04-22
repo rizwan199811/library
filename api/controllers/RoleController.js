@@ -6,21 +6,13 @@
  */
 
 module.exports = {
-    create: async (req, res) => {
-        let params = req.allParams();
-        let user = await User.findOne({ id: params.user });
-        if (user) {
-            let roles = await User.create(params).fetch();
+    get: async (req, res) => {
+            let roles = await Role.find().populate('permissions')
             res.status(201).json({
-                message: "User created successfully",
-                data: user
+                message: "Roles fetched successfully",
+                data: roles
             });
-        }
-        else {
-            res.status(400).json({
-                message: "Something went wrong"
-            });
-        }
-    }
+        
+    },
 };
 

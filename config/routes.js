@@ -20,8 +20,22 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': { view: 'pages/homepage' },
-  'POST /user/:admin':"UserController.create",
-  'GET /admin':"AdminController.get"
+
+  'POST /user/:admin/:role':"UserController.create",
+
+  'GET /admin':"AdminController.get",
+
+  'GET /role':"RoleController.get",
+
+  'POST /permission/:admin/:role':"Permission.create",
+  'GET /permission/:role':"Permission.get",
+
+  
+  'POST /issue/:member/:book':"IssueController.create",
+  'POST /book/:category/:user':"BookController.create"
+
+//category
+
 
   /***************************************************************************
   *                                                                          *

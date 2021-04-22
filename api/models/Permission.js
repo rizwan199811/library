@@ -8,12 +8,9 @@
 module.exports = {
 
   attributes: {
-    modules: {
-      type: 'json',
-      columnType: 'array'
-    },
-    permission:{
-    type:'json'
+    modules:{
+    type:'json',
+    columnType: 'array'
     },
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
@@ -28,7 +25,7 @@ module.exports = {
     //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
-    roles: {
+    role: {
       model: 'role'
     }
   },

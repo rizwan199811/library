@@ -1,5 +1,5 @@
 /**
- * Role.js
+ * Book.js
  *
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
@@ -8,13 +8,25 @@
 module.exports = {
 
   attributes: {
-     title:{
-       type:'string'
-     },
-     permissions: {
-      model: 'permission'
-    }
-
+    title:{
+      type:'string'
+    },
+    edition:{
+      type:'string'
+    },
+    available:{
+      type:'boolean'
+    },
+    price:{
+      type:'number'
+    },
+    unit:{
+      type:'string'
+    },
+     category: {
+      model: 'category'
+    },
+    
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝

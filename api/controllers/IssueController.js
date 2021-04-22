@@ -1,5 +1,5 @@
 /**
- * UserController
+ * IssueController
  *
  * @description :: Server-side actions for handling incoming requests.
  * @help        :: See https://sailsjs.com/docs/concepts/actions
@@ -8,16 +8,18 @@
 
 
 
+
 module.exports = {
     create: async (req, res) => {
         let params = req.allParams();
-        console.log(params)
-        let admin = await Admin.findOne({ id: params.admin });
-        if (admin) {
-            let user = await User.create(params).fetch();
+        let user = await User.findOne({ id: params.member }).populate('role')
+        let admin =await Admin.findOne({id:params.member});
+        let role=user?user.title.role :''
+        if (role==='staff'||admin) {
+            let issue = await Issue.create(params).fetch();
             res.status(201).json({
-                message: "User created successfully",
-                data: user
+                message: "Issue created successfully",
+                data: issue
             });
         }
         else {
