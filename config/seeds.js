@@ -58,7 +58,7 @@ module.exports.seeds = {
                 name:'Poetry'
             },
             {
-                name:'True Crime'
+                name:'false Crime'
             }
 
         ],

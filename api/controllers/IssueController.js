@@ -14,11 +14,17 @@ module.exports = {
         let params = req.allParams();
         let user = await User.findOne({ id: params.member }).populate('role')
         let admin =await Admin.findOne({id:params.member});
-        let role=user?user.title.role :''
+        console.log(admin)
+        // console.log(user);
+        let role=user?user.role.title :''
         if (role==='staff'||admin) {
-            let issue = await Issue.create(params).fetch();
+            // console.log(params)
+            let issue = await Issue.updateOne({id:params.borrow}).set(params);
+            // issue=await Issue.updateOne({id:params.borrow}).set({status:params.status});
+            // console.log(issue)
+
             res.status(201).json({
-                message: "Issue created successfully",
+                message: "Book has been successfully issued successfully",
                 data: issue
             });
         }

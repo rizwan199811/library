@@ -31,8 +31,11 @@ module.exports.routes = {
   'GET /permission/:role':"Permission.get",
 
   
-  'POST /issue/:member/:book':"IssueController.create",
-  'POST /book/:category/:user':"BookController.create"
+  'POST /issue/:member/:book/:borrow':"IssueController.create",
+
+  'POST /book/:user/:category':"BookController.create",
+  'POST /book/borrow/:book/:member':"BookController.borrow"
+
 
 //category
 
